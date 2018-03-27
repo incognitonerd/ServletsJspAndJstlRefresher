@@ -34,15 +34,15 @@
 	</nav>
 
 	<div class="container">
-		<form action="/login.do" method="post">
-			<p>
-				<font color="red">${errMsg}</font>
-			<p>
-				Username: <input type="text" name="username" /><br>
-				<!--  -->
-				Password: <input type="password" name="password" /><br>
-				<!--  -->
-				<input type="submit" value="Login"> <br>
+		<h1>Username: ${username}</h1>
+		<p>Outdoor Activities</p>
+		<ol>
+			<c:forEach items="${activities}" var="activity">
+				<li>${activity.name}&nbsp;&nbsp;<a href="/remove-activity.do?activity=${activity.name}">Remove</a></li>
+			</c:forEach>
+		</ol>
+		<form action="/add-activity.do" method="post">
+			Add Activity&nbsp;<input type="text" name="activity"><input type="submit" value="Add">
 		</form>
 	</div>
 
