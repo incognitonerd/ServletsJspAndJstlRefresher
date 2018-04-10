@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.refresher.models.Activity;
+import com.refresher.doms.Activity;
 import com.refresher.services.ActivitiesService;
 import com.refresher.utils.Constants;
 
@@ -17,7 +17,8 @@ public class RemoveActivityServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
 		String activity = req.getParameter("activity");
-		activities.removeActivity(new Activity(activity));
+		String season = req.getParameter("season");
+		activities.removeActivity(new Activity(activity, season));
 		resp.sendRedirect(Constants.LIST_ACTIVITIES_PAGE.getStr());
 	}
 }

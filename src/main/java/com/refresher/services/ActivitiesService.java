@@ -1,15 +1,15 @@
 package com.refresher.services;
 import java.util.ArrayList;
 import java.util.List;
-import com.refresher.models.Activity;
+import com.refresher.doms.Activity;
 
 public class ActivitiesService {
 	private static List<Activity> activities = new ArrayList<>();
 	static{
-		activities.add(new Activity("Snorkel"));
-		activities.add(new Activity("Dance"));
-		activities.add(new Activity("Fish"));
-		activities.add(new Activity("Hike"));
+		activities.add(new Activity("Snorkel", "Summer"));
+		activities.add(new Activity("Dance", "Winter"));
+		activities.add(new Activity("Fish", "Fall"));
+		activities.add(new Activity("Hike", "Spring"));
 	}
 	
 	public List<Activity> getActivities(){

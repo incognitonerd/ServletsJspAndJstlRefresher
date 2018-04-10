@@ -1,9 +1,11 @@
-package com.refresher.models;
+package com.refresher.doms;
 public class Activity {
 	private String name;
+	private String season;
 	
-	public Activity(String name){
+	public Activity(String name, String season){
 		this.name = name;
+		this.season = season;
 	}
 	
 	public String getName(){
@@ -14,9 +16,17 @@ public class Activity {
 		this.name = name;
 	}
 	
+	public String getSeason(){
+		return season;
+	}
+	
+	public void setSeason(String season){
+		this.season = season;
+	}
+	
 	@Override
 	public String toString(){
-		return "Activity [name=" + name + "]";
+		return "Activity [name=" + name + ", season=" + season + "]";
 	}
 	
 	@Override

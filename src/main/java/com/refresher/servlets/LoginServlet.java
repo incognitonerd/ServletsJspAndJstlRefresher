@@ -5,7 +5,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.text.WordUtils;
 import com.refresher.services.ValidateUserService;
 import com.refresher.utils.Constants;
 
@@ -17,12 +16,6 @@ public class LoginServlet extends HttpServlet {
 	// http://localhost:8080/login.do?island=aruba&city=oranjestad&food=fish
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-		String island = req.getParameter("island");
-		String city = req.getParameter("city");
-		String food = req.getParameter("food");
-		req.setAttribute("island", WordUtils.capitalize(island));
-		req.setAttribute("city", WordUtils.capitalize(city));
-		req.setAttribute("food", food);
 		req.getRequestDispatcher(Constants.LOGIN_JSP_PATH.getStr()).forward(req, resp);
 	}
 	

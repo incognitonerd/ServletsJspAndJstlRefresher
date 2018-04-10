@@ -20,6 +20,6 @@ public class ListActivitiesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
 		req.setAttribute("activities", activities.getActivities());
-		req.getRequestDispatcher(Constants.ACTIVITIES_JSP_PATH.getStr()).forward(req, resp);
+		req.getRequestDispatcher(Constants.HOME_JSP_PATH.getStr()).forward(req, resp);
 	}
 }
